@@ -24,7 +24,7 @@ namespace TEstSQLITE
                 Console.WriteLine("Connected!");
                 command = new SQLiteCommand(connection)
                 {
-                    CommandText = "SELECT * FROM \"Wishes\";"
+                    CommandText = "SELECT * FROM \"WishlistDB\";"
                 };
                 Console.WriteLine("Результат запроса:");
                 DataTable data = new DataTable();

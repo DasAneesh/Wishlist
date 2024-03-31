@@ -63,12 +63,12 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Datasource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Wishes.cs" />
+    <Compile Include="Wish.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="DBwishlist.db" />
     <None Include="packages.config" />
+    <None Include="wishlistDB.db" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
