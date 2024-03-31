@@ -19,7 +19,7 @@ namespace TEstSQLITE
         {
             try
             {
-                connection = new SQLiteConnection("C:\\Users\\User\\Downloads\\MYwishlist\\MYwishlist\\DBwishlist.db; Version=3; FailIfMissing=False");
+                connection = new SQLiteConnection("C:\\Users\\User\\Downloads\\MYwishlist\\MYwishlist\\WishlistDB.db; Version=3; FailIfMissing=False");
                 connection.Open();
                 Console.WriteLine("Connected!");
                 command = new SQLiteCommand(connection)
