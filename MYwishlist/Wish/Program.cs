@@ -17,24 +17,47 @@ namespace TEstSQLITE
             WishRepository rep = new WishRepositoryImpl();
 
             List<Wish> Tmp = rep.Read();
+
+            Wish firstwish = new Wish(2, "scooter", "g", 3, 25000);
+
+
+
+
+
             Console.WriteLine("READ");
             foreach (Wish w in Tmp)
             {
                 Console.WriteLine(Convert.ToString(w.ID) + " " + w.Productname + " " + w.Link + " " + w.Wishmeter + " " + w.Cost);
             }
 
-            Wish firstwish = new Wish(2, "scooter", "ghsdgfkjdgsf", 3, 25000);
+
             rep.Create(firstwish);
-
             Tmp = rep.Read();
-            Console.WriteLine("CREATE scooter ");
 
+            firstwish = Tmp.Last();
+            
+            Console.WriteLine("CREATE scooter ");
             foreach (Wish w in Tmp)
             {
                 Console.WriteLine(Convert.ToString(w.ID) + " " + w.Productname + " " + w.Link + " " + w.Wishmeter + " " + w.Cost);
             }
-            Console.ReadKey();
 
+            firstwish.Cost = 137137137;
+            rep.Update(firstwish);
+            Tmp = rep.Read();
+            Console.WriteLine("Updated DB");
+            foreach (Wish w in Tmp)
+            {
+                Console.WriteLine(Convert.ToString(w.ID) + " " + w.Productname + " " + w.Link + " " + w.Wishmeter + " " + w.Cost);
+            }
+
+            rep.Delete(firstwish.ID);
+            Tmp = rep.Read();
+            Console.WriteLine($"deleted colomn where id = {firstwish.ID} ");
+            foreach (Wish w in Tmp)
+            {
+                Console.WriteLine(Convert.ToString(w.ID) + " " + w.Productname + " " + w.Link + " " + w.Wishmeter + " " + w.Cost);
+            }
 
 
             //try
@@ -63,6 +86,8 @@ namespace TEstSQLITE
             //    Console.WriteLine($"Ошибка доступа к базе данных. Исключение: {ex.Message}");
             //}
             //Console.Read();
+
+            Console.ReadKey();
         }
     }
 }

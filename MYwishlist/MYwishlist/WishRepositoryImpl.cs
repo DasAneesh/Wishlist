@@ -53,7 +53,7 @@ namespace MYwishlist
         {
             try
             {
-                string sql = $"DELETE FROM \"wishlistDB\" WHERE \"ID\" = {id}";
+                string sql = $"DELETE FROM \"Wishes\" WHERE \"ID\" = {id}";
                 using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
                 {
                     connection.Open();
@@ -76,7 +76,7 @@ namespace MYwishlist
         {
             try
             {
-                string sql = $"UPDATE \"wishlistDB\"SET \"Productname\" = {wish.Productname},\"Link\" = {wish.Link}, \"Wishmeter\" = {wish.Wishmeter},\"Cost\" = {wish.Cost} WHERE \"ID\" = {wish.ID};";
+                string sql = $"UPDATE \"Wishes\" SET \"Productname\" = \"{wish.Productname}\",\"Link\" = \"{wish.Link}\", \"Wishmeter\" = {wish.Wishmeter},\"Cost\" = {wish.Cost} WHERE \"ID\" = {wish.ID};";
                 using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
                 {
                     connection.Open();
