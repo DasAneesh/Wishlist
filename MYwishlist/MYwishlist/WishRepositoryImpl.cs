@@ -20,16 +20,18 @@ namespace MYwishlist
         void Delete(int id);
         void Create(Wish wish);
     }
+
+    //D:\\MyWishlist\\Wishlist\\MYwishlist\\MYwishlist\\wishlistDB.db
     public class WishRepositoryImpl : WishRepository
     {
-        private const string ConnectionString = "DataSource = C:\\Users\\User\\Downloads\\Wishlist-main\\Wishlist-main\\MYwishlist\\MYwishlist\\ DBwishlist.db; Version=3; FailIfMissing=False";
+        private const string ConnectionString = "DataSource = D:\\MyWishlist\\Wishlist\\MYwishlist\\MYwishlist\\wishlistDB.db; Version=3; FailIfMissing=False";
 
         public void Create(Wish wish)
         {
 
             try
             {
-                string sql = $"INSERT INTO \"wishlistDB\" VALUES(NULL, {wish.Productname}, {wish.Link}, {wish.Wishmeter}, {wish.Cost})";
+                string sql = $"INSERT INTO \"Wishes\" VALUES(NULL, \"{wish.Productname}\", \"{wish.Link}\", {wish.Wishmeter}, {wish.Cost})";
                 using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
                 {
                     connection.Open();
@@ -83,7 +85,6 @@ namespace MYwishlist
                         cmd.ExecuteNonQuery();
                     }
                 }
-
             }
             catch (SQLiteException ex)
             {

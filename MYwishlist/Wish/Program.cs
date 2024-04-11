@@ -17,12 +17,25 @@ namespace TEstSQLITE
             WishRepository rep = new WishRepositoryImpl();
 
             List<Wish> Tmp = rep.Read();
-            Console.WriteLine("HEllo!");
-            foreach (Wish w in Tmp) 
+            Console.WriteLine("READ");
+            foreach (Wish w in Tmp)
             {
-                Console.WriteLine(w.Productname);
+                Console.WriteLine(Convert.ToString(w.ID) + " " + w.Productname + " " + w.Link + " " + w.Wishmeter + " " + w.Cost);
+            }
+
+            Wish firstwish = new Wish(2, "scooter", "ghsdgfkjdgsf", 3, 25000);
+            rep.Create(firstwish);
+
+            Tmp = rep.Read();
+            Console.WriteLine("CREATE scooter ");
+
+            foreach (Wish w in Tmp)
+            {
+                Console.WriteLine(Convert.ToString(w.ID) + " " + w.Productname + " " + w.Link + " " + w.Wishmeter + " " + w.Cost);
             }
             Console.ReadKey();
+
+
 
             //try
             //{
