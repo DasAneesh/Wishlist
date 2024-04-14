@@ -43,6 +43,9 @@ namespace TEstSQLITE
             }
 
             firstwish.Cost = 137137137;
+            firstwish.Productname = "new line";
+            firstwish.Wishmeter=2;
+            firstwish.Link = "https//scooterstver.com"; 
             rep.Update(firstwish);
             Tmp = rep.Read();
             Console.WriteLine("Updated DB");
