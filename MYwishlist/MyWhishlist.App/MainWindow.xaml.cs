@@ -24,5 +24,26 @@ namespace MyWhishlist.App
         {
             InitializeComponent();
         }
+
+        private void TitleBoxPDname_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TitleBoxPDname_Template.Visibility = TitleBoxPDname.Text=="" ? Visibility.Visible : Visibility.Collapsed;
+
+        }
+
+        private void TitleBoxLinkname_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TitleBoxLinkname_Template.Visibility = TitleBoxLinkname.Text == "" ? Visibility.Visible : Visibility.Collapsed;
+        }
+
+        private void TitleBoxWMname_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TitleBoxWMname_Template.Visibility = TitleBoxWMname.Text == "" ? Visibility.Visible : Visibility.Collapsed;
+        }
+
+        private void TitleBoxCostname_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TitleBoxCostname_Template.Visibility = TitleBoxCostname.Text == "" ? Visibility.Visible : Visibility.Collapsed;
+        }
     }
 }
