@@ -24,5 +24,10 @@ namespace MyWhishlist.App
         {
             InitializeComponent();
         }
+
+        private void Button_Click()
+        {
+
+        }
     }
 }
