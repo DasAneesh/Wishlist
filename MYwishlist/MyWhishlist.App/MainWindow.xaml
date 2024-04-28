@@ -9,38 +9,38 @@
     Width="800"
     Height="450"
     mc:Ignorable="d">
+    <Window.Resources>
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
+    </Window.Resources>
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Button Width="100" Content="Добавить" Margin="10,10,5,10" FontSize="16" />
+            <Button Width="100" Content="Удалить" Margin="5,10,5,10" FontSize="16"/>
+            <Grid>
+                <TextBox Width="180" Margin="5,10,5,10" x:Name="TitleBoxPDname" Panel.ZIndex="2" Background="Transparent" TextChanged="TitleBoxPDname_TextChanged"/>
+                <TextBox Width="180" Margin="5,10,5,10" x:Name="TitleBoxPDname_Template" Text="Название" Foreground="DimGray"/>
+            </Grid>
+            <Grid>
+                <TextBox Width="170" Margin="5,10,5,10" x:Name="TitleBoxLinkname" Panel.ZIndex="2" Background="Transparent" TextChanged="TitleBoxLinkname_TextChanged"/>
+                <TextBox Width="170" Margin="5,10,5,10" x:Name="TitleBoxLinkname_Template" Text="Ссылка" Foreground="DimGray"/>
+            </Grid>
+            <Grid>
 
-        <Button
-            x:Name="test"
-            Width="100"
-            Height="70"
-            Margin="215,50,485,314"
-            Content="button test " />
-        <Button
-            x:Name="test2"
-            Width="100"
-            Height="80"
-            Margin="58,45,642,309"
-            Content="button test " />
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button
-                x:Name="blue"
-                Width="100"
-                Content="2" />
-            <Button
-                x:Name="1"
-                Width="100"
-                Content="" />
-            <Button
-                x:Name="3"
-                Width="100"
-                Content="2" />
-            <Button
-                x:Name="2"
-                Width="100"
-                Content="2" />
+                <TextBox Width="50" Margin="5,10,5,10" x:Name="TitleBoxWMname" Panel.ZIndex="2" Background="Transparent" TextChanged="TitleBoxWMname_TextChanged"/>
+                <TextBox Width="50" Margin="5,10,5,10" x:Name="TitleBoxWMname_Template" Text="LVL" Foreground="DimGray"/>
+            </Grid>
+            <Grid>
 
+                <TextBox Width="110" Margin="5,10,5,10" x:Name="TitleBoxCostname" Panel.ZIndex="2" Background="Transparent" TextChanged="TitleBoxCostname_TextChanged"/>
+                <TextBox Width="110" Margin="5,10,5,10" x:Name="TitleBoxCostname_Template" Text="Стоимость" Foreground="DimGray"/>
+            </Grid>
         </StackPanel>
+        <DataGrid Grid.Row="1"/>
     </Grid>
 </Window>
