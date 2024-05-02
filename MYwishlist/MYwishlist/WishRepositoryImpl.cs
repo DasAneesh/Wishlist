@@ -8,10 +8,10 @@ using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MYwishlist
+namespace MYwishlist.Repository
 {
 
-    public interface WishRepository
+    public interface IWishRepository
     {
         List<Wish> Read();
         List<Wish> ReadById(int id);
@@ -22,9 +22,9 @@ namespace MYwishlist
     }
 
     //D:\\MyWishlist\\Wishlist\\MYwishlist\\MYwishlist\\wishlistDB.db
-    public class WishRepositoryImpl : WishRepository
+    public class WishRepositoryImpl : IWishRepository
     {
-        private const string ConnectionString = "DataSource = D:\\MyWishlist\\Wishlist\\MYwishlist\\MYwishlist\\wishlistDB.db; Version=3; FailIfMissing=False";
+        private const string ConnectionString = "DataSource = C:\\Users\\User\\Downloads\\Wishlist-main\\MYwishlist\\MYwishlist\\wishlistDB.db; Version=3; FailIfMissing=False";
 
         public void Create(Wish wish)
         {

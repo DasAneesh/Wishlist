@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MYwishlist.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,17 +21,16 @@ namespace MyWhishlist.App
     /// </summary>
     public partial class MainWindow : Window
     {
+        IWishRepository repository = new WishRepositoryImpl();
+        WishViewModel viewModel;
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-<<<<<<< HEAD
-        private void Button_Click()
-        {
+            viewModel = new WishViewModel(repository);
+            DataContext = viewModel;
 
         }
-=======
+
         private void TitleBoxPDname_TextChanged(object sender, TextChangedEventArgs e)
         {
             TitleBoxPDname_Template.Visibility = TitleBoxPDname.Text=="" ? Visibility.Visible : Visibility.Collapsed;
@@ -51,6 +51,5 @@ namespace MyWhishlist.App
         {
             TitleBoxCostname_Template.Visibility = TitleBoxCostname.Text == "" ? Visibility.Visible : Visibility.Collapsed;
         }
->>>>>>> 7b78c00ce3139743642d00ba102e16838a639444
     }
 }

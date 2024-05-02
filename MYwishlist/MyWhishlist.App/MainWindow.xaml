@@ -11,36 +11,121 @@
     mc:Ignorable="d">
     <Window.Resources>
         <Style TargetType="{x:Type TextBox}">
-            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontSize" Value="18" />
         </Style>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="60"/>
-            <RowDefinition/>
+            <RowDefinition Height="60" />
+            <RowDefinition />
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <Button Width="100" Content="Добавить" Margin="10,10,5,10" FontSize="16" />
-            <Button Width="100" Content="Удалить" Margin="5,10,5,10" FontSize="16"/>
+            <Button
+                Width="100"
+                Margin="10,10,5,10"
+                Command="{Binding AddCommand}"
+                Content="Добавить"
+                FontSize="16" />
+            <Button
+                Width="100"
+                Margin="5,10,5,10"
+                Command="{Binding DeleteCommand}"
+                Content="Удалить"
+                FontSize="16" />
             <Grid>
-                <TextBox Width="180" Margin="5,10,5,10" x:Name="TitleBoxPDname" Panel.ZIndex="2" Background="Transparent" TextChanged="TitleBoxPDname_TextChanged"/>
-                <TextBox Width="180" Margin="5,10,5,10" x:Name="TitleBoxPDname_Template" Text="Название" Foreground="DimGray"/>
+                <TextBox
+                    x:Name="TitleBoxPDname"
+                    Width="180"
+                    Margin="5,10,5,10"
+                    Panel.ZIndex="2"
+                    Background="Transparent"
+                    Text="{Binding ProductName}"
+                    TextChanged="TitleBoxPDname_TextChanged" />
+                <TextBox
+                    x:Name="TitleBoxPDname_Template"
+                    Width="180"
+                    Margin="5,10,5,10"
+                    Foreground="DimGray"
+                    Text="Название" />
             </Grid>
             <Grid>
-                <TextBox Width="170" Margin="5,10,5,10" x:Name="TitleBoxLinkname" Panel.ZIndex="2" Background="Transparent" TextChanged="TitleBoxLinkname_TextChanged"/>
-                <TextBox Width="170" Margin="5,10,5,10" x:Name="TitleBoxLinkname_Template" Text="Ссылка" Foreground="DimGray"/>
+                <TextBox
+                    x:Name="TitleBoxLinkname"
+                    Width="170"
+                    Margin="5,10,5,10"
+                    Panel.ZIndex="2"
+                    Background="Transparent"
+                    Text="{Binding Link}"
+                    TextChanged="TitleBoxLinkname_TextChanged" />
+                <TextBox
+                    x:Name="TitleBoxLinkname_Template"
+                    Width="170"
+                    Margin="5,10,5,10"
+                    Foreground="DimGray"
+                    Text="Ссылка" />
             </Grid>
             <Grid>
 
-                <TextBox Width="50" Margin="5,10,5,10" x:Name="TitleBoxWMname" Panel.ZIndex="2" Background="Transparent" TextChanged="TitleBoxWMname_TextChanged"/>
-                <TextBox Width="50" Margin="5,10,5,10" x:Name="TitleBoxWMname_Template" Text="LVL" Foreground="DimGray"/>
+                <TextBox
+                    x:Name="TitleBoxWMname"
+                    Width="50"
+                    Margin="5,10,5,10"
+                    Panel.ZIndex="2"
+                    Background="Transparent"
+                    Text="{Binding Wishmeter}"
+                    TextChanged="TitleBoxWMname_TextChanged" />
+                <TextBox
+                    x:Name="TitleBoxWMname_Template"
+                    Width="50"
+                    Margin="5,10,5,10"
+                    Foreground="DimGray"
+                    Text="LVL" />
             </Grid>
             <Grid>
 
-                <TextBox Width="110" Margin="5,10,5,10" x:Name="TitleBoxCostname" Panel.ZIndex="2" Background="Transparent" TextChanged="TitleBoxCostname_TextChanged"/>
-                <TextBox Width="110" Margin="5,10,5,10" x:Name="TitleBoxCostname_Template" Text="Стоимость" Foreground="DimGray"/>
+                <TextBox
+                    x:Name="TitleBoxCostname"
+                    Width="110"
+                    Margin="5,10,5,10"
+                    Panel.ZIndex="2"
+                    Background="Transparent"
+                    Text="{Binding Cost}"
+                    TextChanged="TitleBoxCostname_TextChanged" />
+                <TextBox
+                    x:Name="TitleBoxCostname_Template"
+                    Width="110"
+                    Margin="5,10,5,10"
+                    Foreground="DimGray"
+                    Text="Стоимость" />
             </Grid>
         </StackPanel>
-        <DataGrid Grid.Row="1"/>
+        <ListBox
+            Grid.Row="1"
+            ItemsSource="{Binding WishList}"
+            SelectedItem="{Binding SelectedWish}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock
+                            Margin="5,5,5,5"
+                            HorizontalAlignment="Center"
+                            Text="{Binding Productname}" />
+                        <TextBlock
+                            Margin="5,5,5,5"
+                            HorizontalAlignment="Center"
+                            Text="{Binding Link}" />
+                        <TextBlock
+                            Margin="5,5,5,5"
+                            HorizontalAlignment="Center"
+                            Text="{Binding Wishmeter}" />
+                        <TextBlock
+                            Margin="5,5,5,5"
+                            HorizontalAlignment="Center"
+                            Text="{Binding Cost}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
     </Grid>
 </Window>

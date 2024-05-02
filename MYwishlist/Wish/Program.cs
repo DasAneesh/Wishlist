@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
-using MYwishlist;
+using MYwishlist.Repository;
 
 namespace TEstSQLITE
 {
@@ -14,7 +14,7 @@ namespace TEstSQLITE
         static void Main(string[] args)
         {
 
-            WishRepository rep = new WishRepositoryImpl();
+            IWishRepository rep = new WishRepositoryImpl();
 
             List<Wish> Tmp = rep.Read();
 

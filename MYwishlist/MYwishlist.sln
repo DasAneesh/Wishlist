@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MYwishlist", "MYwishlist\MYwishlist.csproj", "{5659885D-68C1-4D8C-B773-D7891067067E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MYwishlist.Repository", "MYwishlist\MYwishlist.Repository.csproj", "{5659885D-68C1-4D8C-B773-D7891067067E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wish", "Wish\Wish.csproj", "{150B6B1C-68F7-4CC7-9D16-727D10E63A59}"
 EndProject
