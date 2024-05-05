@@ -21,17 +21,23 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
             <Button
-                Width="100"
+                Width="70"
                 Margin="10,10,5,10"
                 Command="{Binding AddCommand}"
                 Content="Добавить"
-                FontSize="16" />
+                FontSize="14" />
             <Button
-                Width="100"
+                Width="70"
                 Margin="5,10,5,10"
                 Command="{Binding DeleteCommand}"
                 Content="Удалить"
-                FontSize="16" />
+                FontSize="14" />
+            <Button
+                Width="70"
+                Margin="5,10,5,10"
+                Command="{Binding UpdateCommand}"
+                Content="Обновить"
+                FontSize="14"/>
             <Grid>
                 <TextBox
                     x:Name="TitleBoxPDname"

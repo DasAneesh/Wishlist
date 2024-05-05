@@ -23,18 +23,27 @@ namespace MyWhishlist.App
         public int Cost { get => cost; set { cost = value; SelectedWish.Cost = value; OnPropertyChanged("Cost"); } }
         public int Wishmeter { get => wishmeter; set { wishmeter = value; SelectedWish.Wishmeter = value; OnPropertyChanged("Wishmeter"); } }
 
-        private Wish selectedWish;
-        public Wish SelectedWish { get => selectedWish; set 
-            { 
-                selectedWish = value; 
-                ProductName = value.Productname;
-
-                OnPropertyChanged("SelectedWish");
+        private Wish selectedWish = new Wish(-2, "", "", 0, 0);
+        public Wish SelectedWish
+        {
+            get => selectedWish; set
+            {
+                if (value != null)
+                {
+                    selectedWish = value;
+                    ProductName = value.Productname;
+                    Link = value.Link;
+                    Cost = value.Cost;
+                    Wishmeter = value.Wishmeter;
+                    OnPropertyChanged("SelectedWish");
+                }
             }
         }
-        public WishViewModel(IWishRepository repository) {
+        public WishViewModel(IWishRepository repository)
+        {
             this.repository = repository;
-            WishList = new ObservableCollection<Wish>(this.repository.Read());   
+            WishList = new ObservableCollection<Wish>(this.repository.Read());
+
         }
 
         private RelayCommand addCommand;
@@ -45,8 +54,11 @@ namespace MyWhishlist.App
                 return addCommand ??
                     (addCommand = new RelayCommand(obj =>
                     {
-                        repository.Create(new Wish(0,ProductName,Link,Wishmeter,Cost));
-                        WishList = new ObservableCollection<Wish>(repository.Read());
+                        if (selectedWish.Productname.Length > 0 && selectedWish.Link.Length > 0)
+                        {
+                            repository.Create(new Wish(0, ProductName, Link, Wishmeter, Cost));
+                            WishList = new ObservableCollection<Wish>(repository.Read());
+                        }
                     }));
             }
         }
@@ -58,8 +70,11 @@ namespace MyWhishlist.App
                 return deleteCommand ??
                     (deleteCommand = new RelayCommand(obj =>
                     {
-                        repository.Delete(selectedWish.ID);
-                        WishList = new ObservableCollection<Wish>(repository.Read());
+                        if (selectedWish.ID > 0)
+                        {
+                            repository.Delete(selectedWish.ID);
+                            WishList = new ObservableCollection<Wish>(repository.Read());
+                        }
                     }));
             }
         }
@@ -72,8 +87,13 @@ namespace MyWhishlist.App
                 return updateCommand ??
                     (updateCommand = new RelayCommand(obj =>
                     {
+                        int id = selectedWish.ID;
                         repository.Update(selectedWish);
                         WishList = new ObservableCollection<Wish>(repository.Read());
+                        if (WishList.Where(x => x.ID == id).Count() > 0)
+                        {
+                            SelectedWish = WishList.First(x => x.ID == id);
+                        }
                     }));
             }
         }
