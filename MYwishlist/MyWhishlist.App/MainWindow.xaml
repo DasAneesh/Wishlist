@@ -19,57 +19,95 @@
             <RowDefinition Height="60" />
             <RowDefinition />
         </Grid.RowDefinitions>
+        <Border  Background="#A8E4A0">
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <Button
-                Width="70"
-                Margin="10,10,5,10"
-                Command="{Binding AddCommand}"
-                Content="Добавить"
-                FontSize="14" />
-            <Button
-                Width="70"
-                Margin="5,10,5,10"
-                Command="{Binding DeleteCommand}"
-                Content="Удалить"
-                FontSize="14" />
-            <Button
-                Width="70"
-                Margin="5,10,5,10"
-                Command="{Binding UpdateCommand}"
-                Content="Обновить"
-                FontSize="14"/>
-            <Grid>
-                <TextBox
-                    x:Name="TitleBoxPDname"
-                    Width="180"
-                    Margin="5,10,5,10"
-                    Panel.ZIndex="2"
+
+            <Border
+                Background="#464451"
+                BorderBrush="Aqua"
+                CornerRadius="12">
+                <Button
+                    Width="70"
+                    Margin="10,10,5,10"
                     Background="Transparent"
-                    Text="{Binding ProductName}"
-                    TextChanged="TitleBoxPDname_TextChanged" />
-                <TextBox
-                    x:Name="TitleBoxPDname_Template"
-                    Width="180"
+                    Foreground="White"
+                    Command="{Binding AddCommand}"
+                    Content="Добавить"
+                    FontSize="14" />
+            </Border>
+            <Border
+                Background="#464451"
+                BorderBrush="Aqua"
+                CornerRadius="14">
+                <Button
+                    Width="70"
                     Margin="5,10,5,10"
-                    Foreground="DimGray"
-                    Text="Название" />
-            </Grid>
-            <Grid>
-                <TextBox
-                    x:Name="TitleBoxLinkname"
-                    Width="170"
-                    Margin="5,10,5,10"
-                    Panel.ZIndex="2"
                     Background="Transparent"
-                    Text="{Binding Link}"
-                    TextChanged="TitleBoxLinkname_TextChanged" />
-                <TextBox
-                    x:Name="TitleBoxLinkname_Template"
-                    Width="170"
+                    Foreground="White"
+                    Command="{Binding DeleteCommand}"
+                    Content="Удалить"
+                    FontSize="14" />
+            </Border>
+            <Border
+                Background="#464451"
+                BorderBrush="Aqua"
+                CornerRadius="14">
+                <Button
+                    Width="70"
                     Margin="5,10,5,10"
-                    Foreground="DimGray"
-                    Text="Ссылка" />
-            </Grid>
+                    Background="Transparent"
+                    Foreground="White"
+                    Command="{Binding UpdateCommand}"
+                    Content="Обновить"
+                    FontSize="14" />
+            </Border>
+            <Border
+                Background="#464451"
+                BorderBrush="Aqua"
+                CornerRadius="14">
+                <Grid>
+                    <TextBox
+                        x:Name="TitleBoxPDname"
+                        Width="180"
+                        Margin="5,10,5,10"
+                        Panel.ZIndex="2"
+                        Background="Transparent"
+                        Text="{Binding ProductName}"
+                        TextChanged="TitleBoxPDname_TextChanged" />
+                    <TextBox
+                        x:Name="TitleBoxPDname_Template"
+                        Width="180"
+                        Margin="5,10,5,10"
+                        Foreground="White"
+                        Background="Transparent"
+                        Text="Название" />
+                </Grid>
+            </Border>
+            <Border
+                Background="#464451"
+                BorderBrush="Aqua"
+                CornerRadius="14">
+                <Grid>
+                    <TextBox
+                        x:Name="TitleBoxLinkname"
+                        Width="170"
+                        Margin="5,10,5,10"
+                        Panel.ZIndex="2"
+                        Background="Transparent"
+                        Text="{Binding Link}"
+                        TextChanged="TitleBoxLinkname_TextChanged" />
+                    <TextBox
+                        x:Name="TitleBoxLinkname_Template"
+                        Width="170"
+                        Margin="5,10,5,10"
+                        Foreground="White"
+                        Background="Transparent"
+                        Text="Ссылка" />
+                </Grid>
+            </Border>
+            <Border Background="#464451"
+                BorderBrush="Aqua"
+                CornerRadius="14">
             <Grid>
 
                 <TextBox
@@ -78,15 +116,21 @@
                     Margin="5,10,5,10"
                     Panel.ZIndex="2"
                     Background="Transparent"
+                    Foreground="White"
                     Text="{Binding Wishmeter}"
                     TextChanged="TitleBoxWMname_TextChanged" />
                 <TextBox
                     x:Name="TitleBoxWMname_Template"
                     Width="50"
                     Margin="5,10,5,10"
-                    Foreground="DimGray"
+                    Foreground="White"
+                    Background="Transparent"
                     Text="LVL" />
             </Grid>
+            </Border>
+            <Border Background="#464451"
+                BorderBrush="Aqua"
+                CornerRadius="14" >
             <Grid>
 
                 <TextBox
@@ -95,38 +139,49 @@
                     Margin="5,10,5,10"
                     Panel.ZIndex="2"
                     Background="Transparent"
+                    Foreground="White"
                     Text="{Binding Cost}"
                     TextChanged="TitleBoxCostname_TextChanged" />
                 <TextBox
                     x:Name="TitleBoxCostname_Template"
                     Width="110"
                     Margin="5,10,5,10"
-                    Foreground="DimGray"
+                    Foreground="White"
+                    Background="Transparent"
                     Text="Стоимость" />
             </Grid>
+            </Border>
+
         </StackPanel>
+        </Border>
         <ListBox
             Grid.Row="1"
+            Background="#A8E4A0"
             ItemsSource="{Binding WishList}"
             SelectedItem="{Binding SelectedWish}">
+
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock
                             Margin="5,5,5,5"
                             HorizontalAlignment="Center"
+                            FontSize="18"
                             Text="{Binding Productname}" />
                         <TextBlock
                             Margin="5,5,5,5"
                             HorizontalAlignment="Center"
+                            FontSize="18"
                             Text="{Binding Link}" />
                         <TextBlock
                             Margin="5,5,5,5"
                             HorizontalAlignment="Center"
+                            FontSize="18"
                             Text="{Binding Wishmeter}" />
                         <TextBlock
                             Margin="5,5,5,5"
                             HorizontalAlignment="Center"
+                            FontSize="18"
                             Text="{Binding Cost}" />
                     </StackPanel>
                 </DataTemplate>

@@ -24,7 +24,7 @@ namespace MYwishlist.Repository
     //D:\\MyWishlist\\Wishlist\\MYwishlist\\MYwishlist\\wishlistDB.db
     public class WishRepositoryImpl : IWishRepository
     {
-        private const string ConnectionString = "DataSource = C:\\Users\\11\\Desktop\\repos\\Wishlist\\MYwishlist\\MYwishlist\\wishlistDB.db; Version=3; FailIfMissing=False";
+        private const string ConnectionString = "DataSource = D:\\MyWishlist\\Wishlist\\MYwishlist\\MYwishlist\\wishlistDB.db; Version=3; FailIfMissing=False";
 
         public void Create(Wish wish)
         {

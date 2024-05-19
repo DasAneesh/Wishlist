@@ -23,7 +23,7 @@ namespace MyWhishlist.App
         public int Cost { get => cost; set { cost = value; SelectedWish.Cost = value; OnPropertyChanged("Cost"); } }
         public int Wishmeter { get => wishmeter; set { wishmeter = value; SelectedWish.Wishmeter = value; OnPropertyChanged("Wishmeter"); } }
 
-        private Wish selectedWish = new Wish(-2, "", "", 0, 0);
+        private Wish selectedWish = new Wish(-2, "", "", 0,0  );
         public Wish SelectedWish
         {
             get => selectedWish; set
