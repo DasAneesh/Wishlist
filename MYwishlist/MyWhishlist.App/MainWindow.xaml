@@ -24,12 +24,13 @@
 
             <Border
                 Background="#464451"
-                BorderBrush="Aqua"
+                BorderBrush="Transparent"
                 CornerRadius="18">
                 <Button
                     Width="70"
                     Margin="10,10,5,10"
                     Background="Transparent"
+                     BorderBrush="Transparent"
                     Foreground="White"
                     Command="{Binding AddCommand}"
                     Content="Добавить"
@@ -37,12 +38,13 @@
             </Border>
             <Border
                 Background="#464451"
-                BorderBrush="Aqua"
+                BorderBrush="Transparent"
                 CornerRadius="18">
                 <Button
                     Width="70"
                     Margin="5,10,5,10"
                     Background="Transparent"
+                     BorderBrush="Transparent"
                     Foreground="White"
                     Command="{Binding DeleteCommand}"
                     Content="Удалить"
@@ -50,27 +52,29 @@
             </Border>
             <Border
                 Background="#464451"
-                BorderBrush="Aqua"
+                BorderBrush="Transparent"
                 CornerRadius="18">
                 <Button
                     Width="70"
                     Margin="5,10,5,10"
                     Background="Transparent"
+                    BorderBrush="Transparent"
                     Foreground="White"
                     Command="{Binding UpdateCommand}"
                     Content="Обновить"
                     FontSize="14" />
             </Border>
-            <Border
+                <Border
                 Background="#464451"
-                BorderBrush="Aqua"
+                BorderBrush="Transparent"
                 CornerRadius="14">
-                <Grid>
+                    <Grid>
                     <TextBox
                         x:Name="TitleBoxPDname"
                         Width="180"
                         Margin="5,10,5,10"
                         Panel.ZIndex="2"
+                         BorderBrush="Transparent"
                         Background="Transparent"
                         Text="{Binding ProductName}"
                         TextChanged="TitleBoxPDname_TextChanged" />
@@ -79,13 +83,14 @@
                         Width="180"
                         Margin="5,10,5,10"
                         Foreground="White"
+                         BorderBrush="Transparent"
                         Background="Transparent"
                         Text="Название" />
                 </Grid>
             </Border>
             <Border
                 Background="#464451"
-                BorderBrush="Aqua"
+                BorderBrush="Transparent"
                 CornerRadius="18">
                 <Grid>
                     <TextBox
@@ -93,6 +98,7 @@
                         Width="170"
                         Margin="5,10,5,10"
                         Panel.ZIndex="2"
+                        BorderBrush="Transparent"
                         Background="Transparent"
                         Text="{Binding Link}"
                         TextChanged="TitleBoxLinkname_TextChanged" />
@@ -101,12 +107,13 @@
                         Width="170"
                         Margin="5,10,5,10"
                         Foreground="White"
+                         BorderBrush="Transparent"
                         Background="Transparent"
                         Text="Ссылка" />
                 </Grid>
             </Border>
             <Border Background="#464451"
-                BorderBrush="Aqua"
+                BorderBrush="Transparent"
                 CornerRadius="18">
             <Grid>
 
@@ -116,6 +123,7 @@
                     Margin="5,10,5,10"
                     Panel.ZIndex="2"
                     Background="Transparent"
+                     BorderBrush="Transparent"
                     Foreground="White"
                     Text="{Binding Wishmeter}"
                     TextChanged="TitleBoxWMname_TextChanged" />
@@ -125,11 +133,12 @@
                     Margin="5,10,5,10"
                     Foreground="White"
                     Background="Transparent"
+                     BorderBrush="Transparent"
                     Text="LVL" />
             </Grid>
             </Border>
             <Border Background="#464451"
-                BorderBrush="Aqua"
+                BorderBrush="Transparent"
                 CornerRadius="18" >
             <Grid>
 
@@ -139,6 +148,7 @@
                     Margin="5,10,5,10"
                     Panel.ZIndex="2"
                     Background="Transparent"
+                     BorderBrush="Transparent"
                     Foreground="White"
                     Text="{Binding Cost}"
                     TextChanged="TitleBoxCostname_TextChanged" />
@@ -147,6 +157,7 @@
                     Width="110"
                     Margin="5,10,5,10"
                     Foreground="White"
+                     BorderBrush="Transparent"
                     Background="Transparent"
                     Text="Стоимость" />
             </Grid>
