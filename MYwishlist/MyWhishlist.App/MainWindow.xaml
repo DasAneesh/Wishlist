@@ -25,7 +25,7 @@
             <Border
                 Background="#464451"
                 BorderBrush="Aqua"
-                CornerRadius="12">
+                CornerRadius="18">
                 <Button
                     Width="70"
                     Margin="10,10,5,10"
@@ -38,7 +38,7 @@
             <Border
                 Background="#464451"
                 BorderBrush="Aqua"
-                CornerRadius="14">
+                CornerRadius="18">
                 <Button
                     Width="70"
                     Margin="5,10,5,10"
@@ -51,7 +51,7 @@
             <Border
                 Background="#464451"
                 BorderBrush="Aqua"
-                CornerRadius="14">
+                CornerRadius="18">
                 <Button
                     Width="70"
                     Margin="5,10,5,10"
@@ -86,7 +86,7 @@
             <Border
                 Background="#464451"
                 BorderBrush="Aqua"
-                CornerRadius="14">
+                CornerRadius="18">
                 <Grid>
                     <TextBox
                         x:Name="TitleBoxLinkname"
@@ -107,7 +107,7 @@
             </Border>
             <Border Background="#464451"
                 BorderBrush="Aqua"
-                CornerRadius="14">
+                CornerRadius="18">
             <Grid>
 
                 <TextBox
@@ -130,7 +130,7 @@
             </Border>
             <Border Background="#464451"
                 BorderBrush="Aqua"
-                CornerRadius="14" >
+                CornerRadius="18" >
             <Grid>
 
                 <TextBox
