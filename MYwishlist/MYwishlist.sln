@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wish", "Wish\Wish.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWhishlist.App", "MyWhishlist.App\MyWhishlist.App.csproj", "{0058719D-02A3-47A5-859A-EF25407AA5F4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MYwishserver", "MYwishserver\MYwishserver.csproj", "{C08B5A97-2155-4BB8-847E-887F3A6BE9CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{0058719D-02A3-47A5-859A-EF25407AA5F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0058719D-02A3-47A5-859A-EF25407AA5F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0058719D-02A3-47A5-859A-EF25407AA5F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C08B5A97-2155-4BB8-847E-887F3A6BE9CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C08B5A97-2155-4BB8-847E-887F3A6BE9CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C08B5A97-2155-4BB8-847E-887F3A6BE9CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C08B5A97-2155-4BB8-847E-887F3A6BE9CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
